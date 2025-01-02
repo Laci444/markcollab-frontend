@@ -11,10 +11,15 @@
   },
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
+    "monaco-editor": "^0.52.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-markdown": "^9.0.1",
-    "remark-gfm": "^4.0.0"
+    "react-yjs": "^2.0.1",
+    "remark-gfm": "^4.0.0",
+    "y-monaco": "^0.1.6",
+    "y-websocket": "^2.1.0",
+    "yjs": "^13.6.21"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",
