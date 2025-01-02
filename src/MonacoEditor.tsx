@@ -4,6 +4,8 @@ import { MonacoBinding } from 'y-monaco'
 import { WebsocketProvider } from 'y-websocket'
 import { Text } from 'yjs'
 
+import './y-monaco.css'
+
 export default function MonacoEditor(props: { wsProvider: WebsocketProvider; ytext: Text }) {
 
   const [editor, setEditor] = useState<any | null>(null)
