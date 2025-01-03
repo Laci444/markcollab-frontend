@@ -9,16 +9,22 @@ import { useY } from 'react-yjs'
 export default function Collaborator(props: { className: string | undefined }) {
 
   const ydoc = useMemo(() => new Y.Doc(), [])
-  const ytext = useMemo(() => ydoc.getText("editor"), [])
+  const ytext = useMemo(() => ydoc.getText("example-room"), [])
   const value = useY(ytext)
   const [provider, setProvider] = useState<WebsocketProvider | null>(null)
 
   // this effect manages the lifetime of the Yjs document and the provider
   useEffect(() => {
     const provider = new WebsocketProvider(
-      'wss://demos.yjs.dev/ws',
-      'markcollab-v1',
-      ydoc
+      'ws://localhost:3030/ws',
+      'example-room',
+      ydoc,
+      {
+        'params': {
+          'user-name': 'Bob'
+        },
+        'protocols': ['markcollab-v1']
+      }
     )
     setProvider(provider)
     return () => {
